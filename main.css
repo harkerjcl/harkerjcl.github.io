@@ -1,0 +1,457 @@
+:root {
+  --primary: #E9B948;
+  --font: #333333;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#main-bg {
+	/*display: flex;*/
+	width: 100%;
+  min-height: 500px; 
+	/*height: 100vh;*/
+  background-image: url("mainpage.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	/*overflow: hidden;*/
+}
+
+#main-bg img {
+	width: 100%;
+	z-index: 100;
+	position: relative;
+	object-fit: cover;
+	object-position: center top;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#main-text {
+	z-index: 1000;
+	position: absolute;
+	font-size: 90px;
+	line-height: 90px;
+	top: calc(50vh - 70px);
+	width: 100%;
+	text-align: center;
+	color: var(--primary);
+	font-weight: 700;
+	mix-blend-mode: screen;
+	/*text-shadow: 0px 0px 20px #000;*/
+	/*TODO: make text unselectable, images undraggable*/
+}
+
+#nav {
+	top: 0;
+	right: 0;
+	position: fixed;
+	z-index: 1000;
+	width: 10%;
+}
+
+#menu-btn {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu-btn img {
+	width: 80%;
+
+}
+
+.menu-dropdown {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	opacity: 0;
+}
+
+.menu-dropdown.fade {
+	opacity: 0;
+}
+
+.menu-dropdown.nofade {
+	opacity: 1;
+}
+
+.menu-dropdown span {
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+	color: #333;
+	font-weight: 500;
+	mix-blend-mode: screen;
+}
+
+#awards {
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	background-color: #eee;
+	align-items: center;
+	justify-content: center;
+}
+
+#convention {
+	width: 100%;
+	margin: 0;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#trophy-icon {
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+}
+
+#trophy-icon img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#awards-text {
+	width: 100%;
+	color: #333;
+	font-weight: 500;
+	font-size: 30px;
+	padding: 0px 15% 0px 15%;
+	text-align: center;
+}
+
+#awards-tl {
+	width: 100%;
+	padding: 60px 15% 60px 15%;
+}
+
+#awards-yrs {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	color: #888;
+}
+
+#awards-vals {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+
+#awards-vals > * {
+	height: 50px;
+	flex-grow: 1;
+	border-radius: 25px;
+	margin: 5px;
+}
+
+.first {
+	background-color: var(--primary);
+}
+
+.second {
+	background-color: #aaa;
+}
+
+.no-place {
+	border-color: #888;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.alt-txt {
+	color: #333 !important;
+}
+
+#conv-header {
+	font-size: 50px;
+	font-weight: 500;
+	padding: 40px;
+	color: #444;
+}
+
+
+
+/*Timeline css*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3D4351;
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/*==================================
+    TIMELINE
+==================================*/
+/*-- GENERAL STYLES
+------------------------------*/
+.timeline {
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+  line-height: inherit;
+}
+
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+  padding-left: 40px;
+  position: relative;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0 0 0.5em 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+.timeline-marker:before {
+  background: var(--primary);
+  border: 3px solid transparent;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 15px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.timeline-marker:after {
+  content: "";
+  width: 3px;
+  background: #CCD5DB;
+  display: block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 6px;
+}
+.timeline-item:last-child .timeline-marker:after {
+  content: none;
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+  background: transparent;
+  border: 3px solid var(--primary);
+}
+
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+  padding-bottom: 40px;
+}
+.timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+/*----- TIMELINE PERIOD -----*/
+.period {
+  padding: 0;
+}
+.period .timeline-info {
+  display: none;
+}
+.period .timeline-marker:before {
+  background: transparent;
+  content: "";
+  width: 15px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  bottom: 30px;
+  position: absolute;
+  border-top: 3px solid #CCD5DB;
+  border-bottom: 3px solid #CCD5DB;
+}
+.period .timeline-marker:after {
+  content: "";
+  height: 32px;
+  top: auto;
+}
+.period .timeline-content {
+  padding: 40px 0 70px;
+}
+.period .timeline-title {
+  margin: 0;
+}
+
+/*----------------------------------------------
+    MOD: TIMELINE SPLIT
+----------------------------------------------*/
+@media (min-width: 768px) {
+  .timeline-split .timeline, .timeline-centered .timeline {
+    display: table;
+  }
+  .timeline-split .timeline-item, .timeline-centered .timeline-item {
+    display: table-row;
+    padding: 0;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info,
+.timeline-split .timeline-marker,
+.timeline-centered .timeline-marker,
+.timeline-split .timeline-content,
+.timeline-centered .timeline-content,
+.timeline-split .period .timeline-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
+    position: relative;
+  }
+  .timeline-split .timeline-content, .timeline-centered .timeline-content {
+    padding-left: 30px;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info {
+    padding-right: 30px;
+  }
+  .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
+    position: relative;
+    left: -45px;
+  }
+}
+
+/*----------------------------------------------
+    MOD: TIMELINE CENTERED
+----------------------------------------------*/
+@media (min-width: 992px) {
+  .timeline-centered,
+.timeline-centered .timeline-item,
+.timeline-centered .timeline-info,
+.timeline-centered .timeline-marker,
+.timeline-centered .timeline-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .timeline-centered .timeline-item {
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+  .timeline-centered .timeline-marker {
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+  .timeline-centered .timeline-info,
+.timeline-centered .timeline-content {
+    width: 50%;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item.period .timeline-content {
+    float: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .timeline-centered .timeline-item.period {
+    padding: 50px 0 90px;
+  }
+  .timeline-centered .period .timeline-marker:after {
+    height: 30px;
+    bottom: 0;
+    top: auto;
+  }
+  .timeline-centered .period .timeline-title {
+    left: auto;
+  }
+}
+
+/*----------------------------------------------
+    MOD: MARKER OUTLINE
+----------------------------------------------*/
+.marker-outline .timeline-marker:before {
+  background: transparent;
+  border-color: var(--primary);
+}
+.marker-outline .timeline-item:hover .timeline-marker:before {
+  background: var(--primary);
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+/*Timeline css*/
