@@ -49,6 +49,7 @@ body {
 	color: var(--primary);
 	font-weight: 700;
 	mix-blend-mode: screen;
+	left: 0;
 	/*text-shadow: 0px 0px 20px #000;*/
 	/*TODO: make text unselectable, images undraggable*/
 }
